@@ -55,7 +55,7 @@ export default function Post({ post }: { post: any }) {
                         </div>
 
                         <div>
-                            <h2 className="italic pt-10">{post.description}</h2>
+                            <h2 className="italic pt-10 line-clamp-2">{post.description}</h2>
                             <div className="flex items-center justify-end mt-auto space-x-2">
                                 {post.categories.map((category: any) => (
                                     <p key={category._id} className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-semibold mt-4">
