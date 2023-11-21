@@ -1,4 +1,5 @@
-const renderNode = (node: any) => {
+const AuthorRichTextComponent = ({ bio }: any) => {
+  const renderNode = (node: any) => {
     if (node._type === 'block') {
       return <p key={node._key}>{renderChildren(node.children)}</p>;
     }
@@ -16,8 +17,7 @@ const renderNode = (node: any) => {
     return children.map((child: any) => renderNode(child));
   };
   
-  const AuthorRichTextComponent = ({ bio }: any) => {
-    return <div>{renderChildren(bio)}</div>;
-  };
+  return <div>{renderChildren(bio)}</div>;
+};
   
-  export default AuthorRichTextComponent;
+export default AuthorRichTextComponent;

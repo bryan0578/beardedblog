@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { SanityDocument } from "@sanity/client";
 import { urlFor } from "../sanity/lib/image"
 import Image from "next/image";
@@ -7,8 +6,6 @@ import { ArrowUpRight } from "lucide-react";
 import ClientSideRoute from "./ClientSideRoute";
 
 export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
-  const title = posts.length === 1 ? `1 Post` : `${posts.length} Posts`;
-
   return (
       <div>
         <hr className="border-[#ff6600] mb-10" />
@@ -18,7 +15,7 @@ export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
             <ClientSideRoute route={`/post/${post.slug.current}`}>
               <div key={post._id} className="flex flex-col group cursor-pointer">
                 <div className="relative w-full h-80 drop-shadow-xl group-hover:scale-105 transition-transform duration-200 ease-out">
-                  <Image className="rounded-xl object-cover object-center lg:object-center" src={urlFor(post.mainImage).url()} alt={post.author} fill />
+                <Image className="rounded-xl object-cover object-center lg:object-center" src={urlFor(post.mainImage).url()} alt={post.author} fill />
                   <div className="absolute bottom-0 w-full bg-opacity-20 bg-black rounded-b-xl  backdrop-blur-lg rounded drop-shadow-lg p-5 flex justify-between">
                     <div>
                       <p className="font-bold line-clamp-2">{post.title}</p>
@@ -58,3 +55,5 @@ export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
 
   );
 }
+
+

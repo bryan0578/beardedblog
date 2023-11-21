@@ -1,16 +1,13 @@
-import Image from 'next/image'
-
-function Banner() {
+const Banner = () => {
     return (
         <div className='flex flex-col lg:flex-row lg:space-x-5 justify-between font-bold px-10 py-5 mb-10'>
             <div>
                 <h1 className="text-7xl">The Daily BeardedBlog</h1>
                 <h2 className='mt-5 md:mt-0'>
-                    Welcome to the {" "}
+                    Welcome to the{" "}
                     <span className='underline decoration-4 decoration-[#ff6601]'>
-                        BeardedCash's.
-                    </span>
-                    {" "} daily {" "}
+                        BeardedCash's
+                    </span>{" "}daily{" "}
                     <span className='underline decoration-4 decoration-[#ff6601]'>
                         BeardedBlog
                     </span>
@@ -21,7 +18,7 @@ function Banner() {
                 New technology | Tips and Tricks | My experiences as a designer and developer
             </p>
         </div>
-    )
-}
+    );
+};
 
-export default Banner
+export default Banner;
